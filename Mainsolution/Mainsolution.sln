@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "psp_application", "psp_application\psp_application.vcxproj", "{AA611951-8A69-4A71-AB2D-E57496F685FD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "server\server.vcxproj", "{6FA895F4-32D0-4DC7-A080-A9622673D675}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA611951-8A69-4A71-AB2D-E57496F685FD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AA611951-8A69-4A71-AB2D-E57496F685FD}.Debug|Win32.Build.0 = Debug|Win32
+		{AA611951-8A69-4A71-AB2D-E57496F685FD}.Release|Win32.ActiveCfg = Release|Win32
+		{AA611951-8A69-4A71-AB2D-E57496F685FD}.Release|Win32.Build.0 = Release|Win32
+		{6FA895F4-32D0-4DC7-A080-A9622673D675}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6FA895F4-32D0-4DC7-A080-A9622673D675}.Debug|Win32.Build.0 = Debug|Win32
+		{6FA895F4-32D0-4DC7-A080-A9622673D675}.Release|Win32.ActiveCfg = Release|Win32
+		{6FA895F4-32D0-4DC7-A080-A9622673D675}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

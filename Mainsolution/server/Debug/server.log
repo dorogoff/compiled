@@ -1,23 +1,19 @@
-﻿Build started 24.05.2011 15:51:59.
-     1>Project "D:\compiled\Mainsolution\server\server.vcxproj" on node 3 (build target(s)).
+﻿Build started 24.05.2011 16:23:01.
+     1>Project "D:\compiled\Mainsolution\server\server.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\server.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
-         main.c
-     1>d:\compiled\mainsolution\server\main.c(60): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+         All outputs are up-to-date.
        ManifestResourceCompile:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\server.exe.embed.manifest.res" Debug\server_manifest.rc 
+         All outputs are up-to-date.
        Link:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\compiled\Mainsolution\Debug\server.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\server.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\compiled\Mainsolution\Debug\server.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\compiled\Mainsolution\Debug\server.lib" /MACHINE:X86 Debug\server.exe.embed.manifest.res
          Debug\main.obj
        Manifest:
          C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\server.exe.embed.manifest" /manifest Debug\server.exe.intermediate.manifest
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\server.exe.embed.manifest.res" Debug\server_manifest.rc 
+         All outputs are up-to-date.
        LinkEmbedManifest:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\compiled\Mainsolution\Debug\server.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\server.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\compiled\Mainsolution\Debug\server.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\compiled\Mainsolution\Debug\server.lib" /MACHINE:X86 Debug\server.exe.embed.manifest.res
-         Debug\main.obj
+         All outputs are up-to-date.
          server.vcxproj -> D:\compiled\Mainsolution\Debug\server.exe
        FinalizeBuildStatus:
          Deleting file "Debug\server.unsuccessfulbuild".
@@ -26,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:15.57
+Time Elapsed 00:00:02.51

@@ -9,6 +9,7 @@
 #include <pspwlan.h> 
 #include <pspnet.h> 
 #include <pspnet_apctl.h> 
+#include <pspctrl.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -126,9 +127,9 @@ int net_thread(SceSize args, void *argp)
 
 	printf("IP: %s\n", szMyIPAddr); 
 	// connect to server trhuth socket
-	int n = create_socket();
-	printf("\nSocket conenction: %d status", n);
-    sceKernelSleepThread(); 
+	//int n = create_socket();
+	//printf("\nSocket conenction: %d status", n);
+    //sceKernelSleepThread(); 
   } 
   return 0; 
 } 
@@ -209,16 +210,39 @@ int create_socket()
 
 }
 
+int pad_thread(SceSize args, void *argp){
+
+	printf("\nPad_thread into");
+	sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
+	SceCtrlData pad;
+
+	while (1)
+	{
+		sceCtrlReadBufferPositive(&pad, 1); 
+		if (pad.Buttons != 0){
+			if (pad.Buttons & PSP_CTRL_CROSS) {
+				printf("\nCross button pressed");
+				create_socket();
+				printf("\nSocket must be closed already");
+			}
+		}
+
+	}
+	return 0;
+}
 
 
 /* Simple thread */ 
 int main(int argc, char **argv) 
 { 
-   SceUID thid; 
+   SceUID thid, th_pad; 
+
+   
 
    SetupCallbacks(); 
 
    pspDebugScreenInit(); 
+   sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
 
   if (InitialiseNetwork() != 0) 
   { 
@@ -230,13 +254,31 @@ int main(int argc, char **argv)
   if (thid < 0) { 
     printf("Error! Thread could not be created!\n"); 
     sceKernelSleepThread(); 
-  } 
+  } else {
+	  printf("\nNet Thread created\n");
+  }
+
+  // create socket and send bytes by triangle
+
+  th_pad = sceKernelCreateThread("pad_thread", pad_thread, 0x19, 0x10000, PSP_THREAD_ATTR_USER, NULL);
+  if (th_pad < 0) { 
+	  printf("Error! Thread listen pad not created\n"); 
+	  sceKernelSleepThread(); 
+  } else {
+	  printf("\nPad Thread created \n");
+	  
+  }
+
+
+  
 
   
 
   sceKernelStartThread(thid, 0, NULL); 
+  sceKernelStartThread(th_pad, 0, 0);
 
   sceKernelExitDeleteThread(0); 
 
    return 0; 
 } 
+

@@ -1,10 +1,30 @@
-﻿Build started 24.05.2011 15:52:48.
+﻿Build started 24.05.2011 17:09:34.
      1>Project "D:\compiled\Mainsolution\psp_application\psp_application.vcxproj" on node 2 (build target(s)).
      1>Build:
          vsmake
-         C:\pspsdk\bin\make: Nothing to be done for `all'.
+         psp-g++ -I. -IC:/pspsdk/psp/sdk/include -O0 -G0 -Wall -g -I. -IC:/pspsdk/psp/sdk/include -O0 -G0 -Wall -g -fno-exceptions -fno-rtti -D_PSP_FW_VERSION=150   -c -o main.o main.cpp
+         main.cpp: In function 'int net_thread(SceSize, void*)':
+     1>main.cpp(128): warning : format '%s' expects type 'char*', but argument 2 has type 'SceNetApctlInfo*'
+         main.cpp: In function 'int create_socket()':
+     1>main.cpp(171): warning : unused variable 'echolen'
+     1>main.cpp(172): warning : unused variable 'received'
+         psp-gcc -I. -IC:/pspsdk/psp/sdk/include -O0 -G0 -Wall -g -D_PSP_FW_VERSION=150  -L. -LC:/pspsdk/psp/sdk/lib   main.o  -lpspdebug -lpspdisplay -lpspge -lpspctrl -lpspsdk -lc -lpspnet -lpspnet_inet -lpspnet_apctl -lpspnet_resolver -lpsputility -lpspuser -lpspkernel -o netsample.elf
+         psp-fixup-imports netsample.elf
+         psp-strip netsample.elf -o netsample_strip.elf
+         pack-pbp EBOOT.PBP PARAM.SFO NULL  \
+         	NULL NULL NULL  \
+         	NULL  netsample_strip.elf NULL
+         [0]        408 bytes | PARAM.SFO
+         [1]          0 bytes | NULL
+         [2]          0 bytes | NULL
+         [3]          0 bytes | NULL
+         [4]          0 bytes | NULL
+         [5]          0 bytes | NULL
+         [6]      66512 bytes | netsample_strip.elf
+         [7]          0 bytes | NULL
+         C:/pspsdk/bin/rm -f netsample_strip.elf
      1>Done Building Project "D:\compiled\Mainsolution\psp_application\psp_application.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.42
+Time Elapsed 00:00:09.97
