@@ -1,0 +1,10 @@
+﻿Build started 24.05.2011 15:52:48.
+     1>Project "D:\compiled\Mainsolution\psp_application\psp_application.vcxproj" on node 2 (build target(s)).
+     1>Build:
+         vsmake
+         C:\pspsdk\bin\make: Nothing to be done for `all'.
+     1>Done Building Project "D:\compiled\Mainsolution\psp_application\psp_application.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.42
